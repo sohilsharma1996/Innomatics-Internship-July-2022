@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+History
+{% endblock %}
+
+{% block content %}
+
+
+<style>
+    table, th, td {
+       border: 1px solid black;
+    }
+
+    
+
+    
+ </style>
+
+ 
+<table class="table table-hover table-dark table-fixed" style="background-color:#FAFAD2">
+
+
+    <tr>
+
+        <th>ID</th>
+        <th>Original URL</th>
+        <th>Shorter URL</th>
+        
+
+    </tr>
+
+    <tbody id="forbar">
+
+   {% for row in allurls %}
+    <tr>
+        <td>{{row.id}}</td>
+        <td>{{row.url}}</td>
+        <td>{{row.shorter}}</td>
+    </tr>
+    {% endfor %}
+
+
+{% endblock%}

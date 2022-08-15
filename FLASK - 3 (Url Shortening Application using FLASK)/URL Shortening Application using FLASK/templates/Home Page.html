@@ -1,0 +1,67 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+<style>
+    
+h1 {
+    text-align: center;
+  }
+  .content {
+    max-width: 1200px;
+    margin: auto;
+
+    .center {
+        text-align: center;
+      }
+  }
+
+ 
+</style>
+
+
+<h1>Welcome to Url Shortener Application </h1>
+
+<div class="center" >
+    <form style=" width: 50vw; margin-left : 25vw;" action="/" method="POST">
+        
+   
+            <label >Original Url:</label>
+            <input type="text" style="height: 35px; width:700px; border: 3px solid green;" size="30"   name="name" placeholder="Enter the URL" required ><br><br>
+ 
+        <button type='submit' class="btn btn-primary">Submit</button>
+  
+    </form>
+
+<br><br>
+   <div style=" width: 50vw; margin-left : 25vw;">
+       <label >Shorter Url:</label>
+    <input type="text" style="height: 35px; width:700px;border: 3px solid green;" size="40" value="{{n}}" id="myInput" ><br><br>
+    
+    <button type='submit'  class="btn btn-success" onclick="myFunction()" style= "cursor:pointer" > Copy url</button>
+   </div>
+</div>
+
+
+
+
+<script>
+function myFunction() {
+  /* Get the text field */
+  var copyText = document.getElementById("myInput");
+
+  /* Select the text field */
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+  /* Copy the text inside the text field */
+  navigator.clipboard.writeText(copyText.value);
+  
+  /* Alert the copied text */
+  alert("Copied the text: " + copyText.value);
+}
+</script>
+{% endblock%}
