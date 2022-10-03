@@ -1,0 +1,1 @@
+Virtual Environment file can't be uploaded because of the large file size and having above 100 dependencies files.
